@@ -1,0 +1,9 @@
+{
+	"name": "DataFactory2015",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ac7770f2-75e3-40bc-9b9d-a86a56bca028",
+		"tenantId": "5b973f99-77df-4beb-b27d-aa0c70b8482c"
+	}
+}

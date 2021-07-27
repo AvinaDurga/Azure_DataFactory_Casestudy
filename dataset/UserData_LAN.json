@@ -1,0 +1,20 @@
+{
+	"name": "UserData_LAN",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "userdata_LAN/y=2021/m=07/d=20",
+				"fileSystem": "userdata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

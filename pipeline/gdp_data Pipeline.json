@@ -1,0 +1,907 @@
+{
+	"name": "gdp_data Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "userdata/userdata_LAN/y=2021/m=07/d=20/"
+					},
+					{
+						"name": "Destination",
+						"value": "userdata/userdata_RAW/y=2021/m=07/d=20/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"additionalColumns": [
+							{
+								"name": "Processing_Time",
+								"value": {
+									"value": "@utcnow()",
+									"type": "Expression"
+								}
+							}
+						],
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CountryName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CountryName",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CountryCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CountryCode",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "IndicatorName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IndicatorName",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "IndicatorCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IndicatorCode",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1960",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1960",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1961",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1961",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1962",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1962",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1963",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1963",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1964",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1964",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1965",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1965",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1966",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1966",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1967",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1967",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1968",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1968",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1969",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1969",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1970",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1970",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1971",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1971",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1972",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1972",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1973",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1973",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1974",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1974",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1975",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1975",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1976",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1976",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1977",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1977",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1978",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1978",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1979",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1979",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1980",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1980",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1981",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1981",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1982",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1982",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1983",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1983",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1984",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1984",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1985",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1985",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1986",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1986",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1987",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1987",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1988",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1988",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1989",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1989",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1990",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1990",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1991",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1991",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1992",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1992",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1993",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1993",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1994",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1994",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1995",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1995",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1996",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1996",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1997",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1997",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1998",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1998",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "1999",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "1999",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2000",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2000",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2001",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2001",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2002",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2002",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2003",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2003",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2004",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2004",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2005",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2005",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2006",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2006",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2007",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2007",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2008",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2008",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2009",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2009",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2010",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2010",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2011",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2011",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2012",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2012",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2013",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2013",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2014",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2014",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2015",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2015",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2016",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2016",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2017",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2017",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "2018",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2018",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Processing_Time",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Processing_Time",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CSV_Dataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": {
+								"value": "@variables('container')",
+								"type": "Expression"
+							},
+							"directory": "/gdpdata_LAN/y=2021/m=07/d=20"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Parquet_Dataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": {
+								"value": "@variables('container')",
+								"type": "Expression"
+							},
+							"directory": "/gdpdata_RAW/y=2021/m=07/d=20"
+						}
+					}
+				]
+			},
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/kanagadurga.subburaj@gds.ey.com/Databricks_Casestudy/RAW_STG1_CP",
+					"baseParameters": {
+						"container": {
+							"value": "@variables('container')",
+							"type": "Expression"
+						},
+						"BatchId": "102",
+						"JobId": "1"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"variables": {
+			"container": {
+				"type": "String",
+				"defaultValue": "gdpdata"
+			}
+		},
+		"annotations": []
+	}
+}

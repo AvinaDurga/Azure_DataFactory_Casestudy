@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "rural_population_percent.csv",
 				"folderPath": "gdpdata_LAN/y=2021/m=07/d=20",
 				"fileSystem": "gdpdata"
 			},

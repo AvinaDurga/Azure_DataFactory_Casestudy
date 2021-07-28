@@ -1,9 +1,17 @@
 {
-	"name": "gdpdata_LAN",
+	"name": "CSV_Dataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"container": {
+				"type": "string"
+			},
+			"directory": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
@@ -11,8 +19,14 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "rural_population_percent.csv",
-				"folderPath": "gdpdata_LAN/y=2021/m=07/d=20",
-				"fileSystem": "gdpdata"
+				"folderPath": {
+					"value": "@dataset().directory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().container",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

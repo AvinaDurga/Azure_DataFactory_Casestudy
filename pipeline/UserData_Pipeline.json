@@ -229,14 +229,22 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "UserData_LAN",
-						"type": "DatasetReference"
+						"referenceName": "Parquet_Dataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "userdata",
+							"directory": "userdata_LAN/y=2021/m=07/d=20"
+						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "UserData_Raw",
-						"type": "DatasetReference"
+						"referenceName": "Parquet_Dataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "userdata",
+							"directory": "userdata_RAW/y=2021/m=07/d=20"
+						}
 					}
 				]
 			},

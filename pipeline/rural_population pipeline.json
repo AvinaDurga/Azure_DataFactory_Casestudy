@@ -1,5 +1,5 @@
 {
-	"name": "gdp_data Pipeline",
+	"name": "rural_population pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -842,7 +842,7 @@
 								"value": "@variables('container')",
 								"type": "Expression"
 							},
-							"directory": "/gdpdata_LAN/y=2021/m=07/d=20"
+							"directory": "/ruralpopulation_LAN/y=2021/m=07/d=20"
 						}
 					}
 				],
@@ -855,7 +855,7 @@
 								"value": "@variables('container')",
 								"type": "Expression"
 							},
-							"directory": "/gdpdata_RAW/y=2021/m=07/d=20"
+							"directory": "/ruralpopulation_RAW/y=2021/m=07/d=20"
 						}
 					}
 				]
@@ -887,7 +887,7 @@
 							"type": "Expression"
 						},
 						"BatchId": "102",
-						"JobId": "1"
+						"JobId": "3"
 					}
 				},
 				"linkedServiceName": {
@@ -899,7 +899,7 @@
 		"variables": {
 			"container": {
 				"type": "String",
-				"defaultValue": "gdpdata"
+				"defaultValue": "ruralpopulation"
 			}
 		},
 		"annotations": []
